@@ -8,6 +8,8 @@ import {MatIconModule} from '@angular/material/icon'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AppComponent,
     NavbarComponent,
     WelcomeComponent,
+    LoginComponent,
+    RegisterComponent,
    
   ],
   imports: [
