@@ -1,0 +1,21 @@
+.spacer  {
+    flex: 11 auto;
+}
+
+.button-margin{
+    margin-right: 20px;
+}
+.round-image {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+
+  .logo {
+    width: 100%;
+    height: auto; 
+  }
+
+  

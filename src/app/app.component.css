@@ -1,8 +1,14 @@
 
+:host {
+    display: block;
+    background: linear-gradient(to bottom, #0e871a,#213e21, #000000); /* Dégradé sombre */
+    color: #eef4f1; /* Couleur du texte pour un meilleur contraste */
+    height: 100%;
+}
+
 .loader-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; 
-  }
-  
+}

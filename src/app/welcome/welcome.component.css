@@ -1,0 +1,38 @@
+
+/* styles.css ou navbar.component.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 20px;
+}
+
+
+
+h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+
+
+/* Style pour l'image ronde */
+.rounded-image {
+    border-radius: 50%;
+}
