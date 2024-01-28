@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
     WelcomeComponent,
     LoginComponent,
     RegisterComponent,
+    DashboardComponent,
    
   ],
   imports: [

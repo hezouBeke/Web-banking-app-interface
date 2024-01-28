@@ -198,19 +198,20 @@ a:hover { text-decoration: none; color: #02818f; }
 /*---------------------------------------------------------------------
                                Sign In
 -----------------------------------------------------------------------*/
-.sign-in-page { height: 100%; }
-.sign-in-detail { padding: 100px; height: 100vh; border-radius: 40px; }
-.sign-in-logo { display: inline-block; width: 100%; }
+.sign-in-page { height: 50%; }
+.sign-in-detail { padding: 100px; height: 10vh; border-radius: 40px; }
+.sign-in-logo { display:contents; width: 10%; }
 .sign-in-logo img { height: 100px; }
-.sign-in-from { padding: 20px 60px; border-radius: 37px; position: absolute; top: 10%; bottom: 10%; left: 0; right: 0; background: #fff; }
-.sign-info { border-top: 1px solid #cdd1f3; margin-top: 30px; padding-top: 20px; }
-.iq-social-media { margin: 0; padding: 0; float: right; }
+.sign-in-from { padding: 60px 60px; border-radius: 50px; position: absolute; top: 10%; bottom: 10%; left: 1; right: 1; background: #cccccc; bottom: auto; }
+.sign-info { border-top: 2px solid #000000; margin-top: 10px; padding-top: 10px;  bottom: auto;}
+.iq-social-media { margin: 0; padding: 1; float: right; }
 .iq-social-media li { list-style: none; float: left; margin-right: 10px; }
-.iq-social-media li:last-child { margin-right: 0; }
-.iq-social-media li a { height: 30px; width: 30px; text-align: center; font-size: 18px; line-height: 30px; display: inline-block; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px; background: #eff7f8; color: #020a5a !important; }
+.iq-social-media li:last-child { margin-right: 1px; }
+.iq-social-media li a { height: 1px; width: 30px; text-align: center; font-size: 10px; line-height: 3px; display: inline-block; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px; background: #0c051e; color: #000000 !important; }
 .iq-social-media li a:hover { text-decoration: none; }
-.sign-in-page .sign-in-page-bg { position: relative; overflow: hidden; }
-.sign-in-page .sign-in-page-bg::after { position: absolute; content: ""; top: 0; bottom: 0; left: 0; right: 270px; z-index: -1; border-radius: 40px; background: rgb(8, 3, 110); background: -moz-linear-gradient(left, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(8, 155, 171, 1)), color-stop(100%, rgba(13, 181, 200, 1))); background: -webkit-linear-gradient(left, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%); background: -o-linear-gradient(left, rgba(8, 155, 171, 1) 0%, rgb(4, 6, 105) 100%); background: -ms-linear-gradient(left, rgb(5, 10, 102) 0%, rgb(10, 24, 102) 100%); background: linear-gradient(to right, #050e57 0%, #050e57 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#089bab', endColorstr='#0db5c8', GradientType=1); }
+.sign-in-page .sign-in-page-bg { position:relative; overflow:scroll; }
+.sign-in-page .sign-in-page-bg::after { position: absolute; content: ""; top:0; bottom: 0; left: 0; right: 280px; z-index: -1; border-radius: 50px; background: rgb(39, 33, 33); background: -moz-linear-gradient(left, rgb(7, 8, 8) 0%, rgb(0, 4, 4) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgb(5, 6, 6)), color-stop(100%, rgb(0, 0, 0))); background: -webkit-linear-gradient(left, rgb(0, 0, 0) 0%, rgb(10, 11, 11) 100%); background: -o-linear-gradient(left, rgb(0, 0, 0) 0%, rgb(4, 6, 105) 100%); background: -ms-linear-gradient(left, rgb(227, 227, 228) 0%, rgb(236, 239, 255) 100%); background: linear-gradient(to right, #05072c 0%, #3e49a0 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#089bab', endColorstr='#0db5c8', GradientType=1); }
+
 
 /*---------------------------------------------------------------------
                                Dash Hover
