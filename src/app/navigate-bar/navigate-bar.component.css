@@ -43,7 +43,7 @@
 
 .bottom-section h2 {
     margin-bottom: 10px;
-    color: #333; /* Couleur du texte */
+    color: #333; 
 }
 
 .bottom-section p {
@@ -53,8 +53,8 @@
 
 .create-account-btn {
     padding: 10px 20px;
-    background-color: #030b50; /* Couleur de fond du bouton */
-    color: #fff; /* Couleur du texte du bouton */
+    background-color: #030b50;
+    color: #fff; 
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -66,13 +66,44 @@
     margin-right: 10px;
     max-width: 20px;
     height: auto;
+  
 }
 .barré{
-
     max-width: 30px;
     max-height: 30px;
     border-radius: 50px;
 }
+.side-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px; /* ou la largeur souhaitée */
+  height: 100vh;
+  background-color: #c5c4c8; /* couleur de fond de la sidebar */
+  border-left: 1px solid #ccc; /* bordure à gauche de la sidebar */
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1); /* ombre à gauche de la sidebar */
+  transform: translateX(100%); /* déplace la sidebar hors de la vue initiale */
+  transition: transform 0.3s ease-in-out; /* ajoute une transition fluide */
+
+  &.active {
+    transform: translateX(0); /* affiche la sidebar lorsqu'elle est active */
+  }
+
+  p {
+    padding: 10px;
+  }
+
+  i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333; /* couleur de l'icône */
+  }
+}
+
+
 
 
 

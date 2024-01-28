@@ -14,4 +14,8 @@ signOut() {
   console.log('Déconnexion');
 }
 
+sideBarVisible: boolean = false;
+ toggleSideBar() {
+    this.sideBarVisible = !this.sideBarVisible;
+  }
 }

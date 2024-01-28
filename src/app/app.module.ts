@@ -11,8 +11,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { NavigateBarComponent } from './navigate-bar/navigate-bar.component';
+
 
 
 @NgModule({
@@ -23,9 +23,9 @@ import { NavigateBarComponent } from './navigate-bar/navigate-bar.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-
     NavigateBarComponent,
    
+    
   ],
   imports: [
     BrowserModule,
