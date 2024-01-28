@@ -1,3 +1,50 @@
-<app-navigate-bar> </app-navigate-bar>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (hash)" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (hash)" crossorigin="anonymous" />
 
+</head>
+<div class="top-bar">
+    <div class="logo">
+        <img src="assets/images/logo2.jpg" alt="Ega Bank Logo" class="bank-logo">EGA_BANK
+    </div>
+    <div class="nav-links">
+        <a routerLink="/transactions"><i class="fas fa-history"></i> Historique des transactions</a>
+    </div>
+    <div class="sign-out">
+        <a href="#" (click)="signOut()"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+    </div>
+</div>
 
+<div class="bottom-section">
+    <h2 style=" font-family:'sans-serif';" ><img src="assets/images/stop.jpeg" alt="Carte Bancaire" class="barré"> Aucun compte enregistré. </h2>
+    <hr>
+    <p>Vous n'avez actuellement aucun compte enregistré. Cliquez ci-dessous pour créer un nouveau compte.</p>
+    <a  class="create-account-btn" (click)="toggleSideBar()">
+        <img src="assets/images/card.jpeg" alt="Carte Bancaire" class="credit-card-logo">
+        Créer un compte
+      </a>
+</div>
+<div class="side-bar" [ngClass]="{'active': sideBarVisible}">
+    <p> Créons votre compte </p>
+    <i class="fas fa-times" (click)="toggleSideBar()"></i>
+    <div class="bottom-min-section">
+        <label for="accountType">Type de compte :</label>
+        <select id="accountType">
+            <option value="personal">Epargne</option>
+            <option value="business">courant</option>
+            <option value="business">Personnel</option>
+            <option value="business">Entreprise</option>
+        </select>
+        <img src="assets/images/card.jpeg" alt="Carte Bancaire" class="credit-card-logo">
+        <button class="create-account-btn" (click)="createAccount()">Créer un compte</button>   
+    </div>
+</div>
+<div *ngFor="let account of accounts" class="account-details">
+    <h3>{{ account.accountType }} Account</h3>
+    <p>Account Number: {{ account.accountNumber }}</p>
+    <p>Creation Date: {{ account.creationDate | date }}</p>
+    <p>Balance: {{ account.balance | currency }}</p>
+    <p>Owner: {{ account.owner }}</p>
+  </div>
+
+  

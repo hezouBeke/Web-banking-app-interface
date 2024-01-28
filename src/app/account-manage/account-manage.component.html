@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (hash)" crossorigin="anonymous" />
 
 </head>
+
 <div class="top-bar">
     <div class="logo">
         <img src="assets/images/logo2.jpg" alt="Ega Bank Logo" class="bank-logo">EGA_BANK
@@ -14,18 +15,3 @@
         <a href="#" (click)="signOut()"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
     </div>
 </div>
-
-<div class="bottom-section">
-    <h2 style=" font-family:'sans-serif';" ><img src="assets/images/stop.jpeg" alt="Carte Bancaire" class="barré"> Aucun compte enregistré. </h2>
-    <hr>
-    <p>Vous n'avez actuellement aucun compte enregistré. Cliquez ci-dessous pour créer un nouveau compte.</p>
-    <a  class="create-account-btn" (click)="toggleSideBar()">
-        <img src="assets/images/card.jpeg" alt="Carte Bancaire" class="credit-card-logo">
-        Créer un compte
-      </a>
-</div>
-<div class="side-bar" [ngClass]="{'active': sideBarVisible}">
-    <p>Créer un compte </p>
-    <i class="fas fa-times" (click)="toggleSideBar()"></i>
-</div>
-  
