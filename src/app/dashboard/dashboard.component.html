@@ -50,14 +50,27 @@
 <div *ngIf="successMessage" class="success-message">
     {{ successMessage }}
 </div>
+
+
 <div *ngIf="accounts.length > 0">
+    <div class="new-account "><a class="create-account-btnn" (click)="toggleSideBar()">
+        <img src="assets/images/card.jpeg" alt="Carte Bancaire" class="credit-card-logo">
+        Créer nouveau un compte
+    </a></div>
+    <div class="transact "><a class="do-transact-btn">
+        <img src="assets/images/trans1.jpeg" alt="Carte Bancaire" class="transact-logo">
+       Transact
+    </a></div><br>
+    
     <div *ngFor="let account of accounts" class="account-details">
-        <h3>{{ account.accountType }} Account</h3>
-        <p>Account Number: {{ account.accountNumber }}</p>
-        <p>Creation Date: {{ account.creationDate | date }}</p>
-        <p>Balance: {{ account.balance | currency }}</p>
-        <p>Owner: {{ account.owner }}</p>
-    </div>
+        <button class="dropdown-btn" (click)="toggleDropdown($event)"> Compte {{ account.accountType }}</button>
+        <div class="dropdown-content">
+            <p>Numéro de compte : {{ account.accountNumber }}</p>
+            <p>Date de création : {{ account.creationDate | date }}</p>
+            <p>Solde : {{ account.balance | currency }}</p>
+            <p>Propriétaire : {{ account.owner }}</p>
+        </div>
+    </div>   
 </div>
 
 

@@ -51,4 +51,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.accounts = this.accountService.getAccounts();
   }
+  toggleDropdown(event: Event) {
+    const dropdownContent = (event.target as HTMLElement).nextElementSibling;
+    if (dropdownContent) {
+        dropdownContent.classList.toggle('active');
+    }
+}
+
 }

@@ -127,7 +127,7 @@
 .success-message {
   color: green;
   font-weight: bold;
-  margin-top: 10px; 
+  margin-top: 20px; 
 
 }
 .logot{
@@ -140,6 +140,87 @@
 .lect{
   border: 2px solid ;
 }
+.create-account-btnn{
+  padding: 10px 20px;
+  background-color: #030b50;
+  color: #fff; 
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 90px;
+}
+.account-details{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 150px; 
+  
+}
+.new-account{
+  margin-top: 80px;
+  margin-left: 50px;
+}
+
+.do-transact-btn{
+  padding: 10px 20px;
+  background-color: #254e04;
+  color: #fff; 
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  margin-top: 5px;
+  margin-right: 100px;
+}
+.transact-logo{
+  border-radius: 50px;
+  margin-right: 10px;
+  max-width: 20px;
+  height: auto;
+  
+}
+.create-account-btnn {
+  float: left;
+  margin-top: 5px;
+  margin-left: 100px;
+}
+.account-details {
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: #fff;
+  border: none;
+  color: #030b50;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+  margin-left: 50px;
+}
+
+.account-details:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
 
 
 
