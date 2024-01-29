@@ -31,13 +31,13 @@
     cursor: pointer;
   }
   .bottom-section {
-    margin-top: 3cm;
+    margin-top:3cm;
     padding: 20px;
     background-color: #c5c4c8;
     border: 2px solid #767779; 
     border-radius: 10px; 
     box-shadow: 10 10 10px rgba(0, 0, 0, 0.1);
-    margin-right: 7cm;
+    margin-right: 15cm;
     margin-left: 2cm;
 }
 
@@ -59,6 +59,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 
@@ -74,12 +75,13 @@
     border-radius: 50px;
 }
 .side-bar {
+  color: white;
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px; 
+  width: 400px; 
   height: 100vh;
-  background-color: #c5c4c8; 
+  background-color: #030b50; 
   border-left: 1px solid #ccc; 
   box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1); 
   transform: translateX(100%); 
@@ -99,30 +101,46 @@
     right: 10px;
     cursor: pointer;
     font-size: 20px;
-    color: #333; /* couleur de l'icône */
+    color: #fcfcfc; 
   }
 }
 .side-bar .bottom-min-section {
-  margin-top: 20px; /* Ajoutez une marge en haut selon vos besoins */
-  padding: 10px;
-  background-color: #f2f2f2; /* Couleur de fond */
-  border: 1px solid #ddd; /* Bordure */
-  border-radius: 5px; /* Coins arrondis */
+  margin-top: 20px;
+  background-color: #ffffff; 
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .side-bar .bottom-min-section label {
   display: block;
-  margin-bottom: 5px; /* Marge en bas pour l'étiquette */
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
 .side-bar .bottom-min-section select {
-  width: 100%; /* Largeur à 100% pour remplir le conteneur parent */
-  padding: 8px; /* Espacement interne */
-  margin-bottom: 10px; /* Marge en bas pour le sélecteur */
+  width: 100%; 
+  padding: 8px; 
+  margin-bottom: 10px; 
+}
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px; 
+
+}
+.logot{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 200px;
+  margin-left: 150px;
+
+}
+.lect{
+  border: 2px solid ;
 }
 
-/* Ajoutez d'autres styles selon vos besoins */
 
 
 
