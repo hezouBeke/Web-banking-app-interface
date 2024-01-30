@@ -1,6 +1,4 @@
-// dashboard.component.ts
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Account } from '../services/account.service';
 import { AccountService } from '../services/account.service';
 
@@ -11,9 +9,17 @@ import { AccountService } from '../services/account.service';
 })
 export class DashboardComponent implements OnInit {
 
-  successMessage: string = '';  // Ajoutez cette ligne
 
-  constructor(private accountService: AccountService) {}
+  successMessage: string = '';
+  sideBarVisible: boolean = false;
+  sideBarVisible_t: boolean = false;
+  accounts: Account[] = [];
+  selectedTransactionType: string = '';
+
+  constructor(private cdr: ChangeDetectorRef, private accountService: AccountService) {
+    // Initialisation du ChangeDetectorRef dans le constructeur
+    this.cdr = cdr;
+  }
 
   createAccount(): void {
     const accountTypeElement = document.getElementById('accountType') as HTMLInputElement;
@@ -21,7 +27,7 @@ export class DashboardComponent implements OnInit {
 
     const newAccount: Account = {
       accountNumber: '123456789',
-      accountType: accountType || 'personal',
+      accountType: accountType || 'PERSONAL',
       creationDate: new Date(),
       balance: 0,
       owner: 'Nom du propriétaire',
@@ -31,12 +37,10 @@ export class DashboardComponent implements OnInit {
     this.sideBarVisible = false;
     this.successMessage = 'Compte créé avec succès !';
 
-    setTimeout(() => {
+    setTimeout(() => {  
       this.successMessage = '';
     }, 1000);
   }
-
-  sideBarVisible: boolean = false;
 
   signOut() {
     console.log('Déconnexion');
@@ -46,16 +50,25 @@ export class DashboardComponent implements OnInit {
     this.sideBarVisible = !this.sideBarVisible;
   }
 
-  accounts: Account[] = [];
+  toggleSideBar_t() {
+    this.sideBarVisible_t = !this.sideBarVisible_t;
+  }
 
   ngOnInit(): void {
     this.accounts = this.accountService.getAccounts();
   }
+
   toggleDropdown(event: Event) {
     const dropdownContent = (event.target as HTMLElement).nextElementSibling;
     if (dropdownContent) {
-        dropdownContent.classList.toggle('active');
+      dropdownContent.classList.toggle('active');
     }
-}
+  }
 
+  // Réaction au changement de type de transaction
+  onTransactionTypeChange(event: any) {
+    this.selectedTransactionType = event.target.value;
+    // Forcer la détection des changements pour mettre à jour le formulaire
+    this.cdr.detectChanges();
+  }
 }

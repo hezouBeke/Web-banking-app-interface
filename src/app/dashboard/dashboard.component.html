@@ -1,4 +1,3 @@
-
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-... (hash)" crossorigin="anonymous" />
@@ -11,7 +10,7 @@
         <img src="assets/images/logo2.jpg" alt="Ega Bank Logo" class="bank-logo">EGA_BANK
     </div>
     <div class="nav-links">
-        <a routerLink="/transactions"><i class="fas fa-history"></i> Historique des transactions</a>
+        <button class="transact-history"> <i class="fas fa-history"></i> Historique des transactions</button>
     </div>
     <div class="sign-out">
         <a href="#" (click)="signOut()"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
@@ -19,8 +18,7 @@
 </div>
 
 <div class="bottom-section" *ngIf="accounts.length === 0 && !successMessage">
-    <h3><img src="assets/images/stop.jpeg" alt="Carte Bancaire"
-            class="barré"> Aucun compte enregistré. </h3>
+    <h3><img src="assets/images/stop.jpeg" alt="Carte Bancaire" class="barré"> Aucun compte enregistré. </h3>
     <hr>
     <p>Vous n'avez actuellement aucun compte enregistré. Cliquez ci-dessous pour créer un nouveau compte.</p>
     <a class="create-account-btn" (click)="toggleSideBar()">
@@ -30,7 +28,7 @@
 </div>
 
 <div class="side-bar" [ngClass]="{'active': sideBarVisible}" *ngIf="sideBarVisible">
-    <p> Créons votre compte </p>
+    <p> NOUVEAU COMPTE </p>
     <i class="fas fa-times" (click)="toggleSideBar()"></i>
     <div class="bottom-min-section">
         <label for="accountType">Type de compte :</label>
@@ -40,13 +38,55 @@
             <option value="business">Personnel</option>
             <option value="business">Entreprise</option>
         </select>
-        <img src="assets/images/card.jpeg" alt="Carte Bancaire" class="credit-card-logo">
         <button class="create-account-btn" (click)="createAccount()">Créer un compte</button>
     </div>
     <div class="logot">
         <img src="assets/images/logo2.jpg" alt="Ega Bank Logo" class="bank-logo">
     </div>
 </div>
+
+<div class="side-bar_t" [ngClass]="{'active': sideBarVisible_t}" *ngIf="sideBarVisible_t">
+    <p> TRANSACTION</p>
+    <i class="fas fa-times" (click)="toggleSideBar_t()"></i>
+    <div class="bottom-min-section_t">
+        <label for="accountType"> Type de transaction à effectuer :</label>
+        <select id="accountType" class="lect_t" (change)="onTransactionTypeChange($event)">
+            <option value="" disabled selected>-- Sélectionner le type de transaction --</option>
+            <option value="versement">Versement</option>
+            <option value="retrait">Retrait</option>
+        </select>
+
+        <!-- Formulaire pour le versement -->
+        <form *ngIf="selectedTransactionType === 'versement'">
+            <div class="mb-3">
+                <label for="accountName" class="accoun-name">numéro de compte </label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="montant" class="rising">Montant</label>
+                <input type="number" class="form-control">
+            </div>
+            <button type="submit" class="btn">Valider</button>
+        </form>
+        <!-- Formulaire de retrait  -->
+        <form *ngIf="selectedTransactionType === 'retrait'">
+            <div class="mb-3">
+                <label for="accountName" class="accoun-name">numéro de compte </label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="montant" class="rising">Montant</label>
+                <input type="number" class="form-control">
+            </div>
+            <button type="submit" class="btn">Valider</button>
+        </form>
+    </div>
+
+</div>
+
+
+
+
 <div *ngIf="successMessage" class="success-message">
     {{ successMessage }}
 </div>
@@ -54,23 +94,25 @@
 
 <div *ngIf="accounts.length > 0">
     <div class="new-account "><a class="create-account-btnn" (click)="toggleSideBar()">
-        <img src="assets/images/card.jpeg" alt="Carte Bancaire" class="credit-card-logo">
-        Créer nouveau un compte
-    </a></div>
-    <div class="transact "><a class="do-transact-btn">
-        <img src="assets/images/trans1.jpeg" alt="Carte Bancaire" class="transact-logo">
-       Transact
-    </a></div><br>
-    
+            <img src="assets/images/card.jpeg" alt="Carte Bancaire" class="credit-card-logo">
+            Ajouter un compte
+        </a></div>
+    <div class="transact "><a class="do-transact-btn" (click)="toggleSideBar_t()">
+            <img src="assets/images/trans1.jpeg" alt="Carte Bancaire" class="transact-logo">
+            Transact
+        </a></div><br>
+
     <div *ngFor="let account of accounts" class="account-details">
-        <button class="dropdown-btn" (click)="toggleDropdown($event)"> Compte {{ account.accountType }}</button>
-        <div class="dropdown-content">
-            <p>Numéro de compte : {{ account.accountNumber }}</p>
-            <p>Date de création : {{ account.creationDate | date }}</p>
-            <p>Solde : {{ account.balance | currency }}</p>
-            <p>Propriétaire : {{ account.owner }}</p>
+        <div class="dropdown">
+            <button class="dropbtn" style=" color: rgb(7, 7, 7) solid;">{{ account.accountType }} Account <span
+                    class="arrow-down"></span></button>
+            <div class="dropdown-content">
+                <p>Numéro de compte : {{ account.accountNumber }}</p>
+                <p>Date de création : {{ account.creationDate | date }}</p>
+                <p>Solde : {{ account.balance | currency }}</p>
+                <p>Propriétaire : {{ account.owner }}</p>
+            </div>
         </div>
-    </div>   
+    </div>
+
 </div>
-
-

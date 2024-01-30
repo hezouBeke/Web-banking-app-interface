@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AccountService {
     private accounts: Account[] = [];
+   
   
     getAccounts(): Account[] {
       return this.accounts;
