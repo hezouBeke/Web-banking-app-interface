@@ -8,5 +8,4 @@ export class Client{
     NumTelClient!:number;
     courielClient!:string;
     NationalityClient!:string[];
-
 }

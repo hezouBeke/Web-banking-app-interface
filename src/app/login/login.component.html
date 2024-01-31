@@ -16,14 +16,14 @@
             <div class="col-md-6 position-relative">
                 <div class="sign-in-from">
                     <h1 class="mb-0">Connexion</h1>
-                    <form class="mt-4">
+                    <form class="mt-4" (submit)="onSubmit()">
                         <div class="form-group">
                             <label>E-mail :</label>
-                            <input type="text" class="form-control mb-0">
+                            <input type="text" class="form-control mb-0"  [(ngModel)]="email">
                         </div>
                         <div class="form-group">
                             <label>Mot de passe</label>
-                            <input type="password" class="form-control mb-0">
+                            <input type="password" class="form-control mb-0"  [(ngModel)]="password">
                         </div>   
                     </form>
                     <button class="btn btn-primary mt-3" >Se connecter</button>

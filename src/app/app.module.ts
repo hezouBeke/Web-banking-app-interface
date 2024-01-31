@@ -14,8 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountManageComponent } from './account-manage/account-manage.component';
 import { TransactionsSidenavComponent } from './transactions-sidenav/transactions-sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     AccountManageComponent,
     TransactionsSidenavComponent,
     
-  
-   
     
   ],
   imports: [
@@ -40,6 +38,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [],
