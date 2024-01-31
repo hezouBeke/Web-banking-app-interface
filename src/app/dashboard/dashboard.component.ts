@@ -8,17 +8,24 @@ import { AccountService } from '../services/account.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  
+  public noTransactions: boolean;
+  public transactions: any[] = [];
 
-
+  isTransactionsHistoryPage: boolean = false;
   successMessage: string = '';
   sideBarVisible: boolean = false;
   sideBarVisible_t: boolean = false;
   accounts: Account[] = [];
   selectedTransactionType: string = '';
+  setTransactionsHistoryPage(isTransactionsHistoryPage: boolean): void {
+    this.isTransactionsHistoryPage = isTransactionsHistoryPage;
+  }
+
 
   constructor(private cdr: ChangeDetectorRef, private accountService: AccountService) {
-    // Initialisation du ChangeDetectorRef dans le constructeur
     this.cdr = cdr;
+    this.noTransactions = this.transactions.length === 0;
   }
 
   createAccount(): void {
@@ -37,7 +44,7 @@ export class DashboardComponent implements OnInit {
     this.sideBarVisible = false;
     this.successMessage = 'Compte créé avec succès !';
 
-    setTimeout(() => {  
+    setTimeout(() => {
       this.successMessage = '';
     }, 1000);
   }
@@ -65,10 +72,10 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  // Réaction au changement de type de transaction
+
   onTransactionTypeChange(event: any) {
     this.selectedTransactionType = event.target.value;
-    // Forcer la détection des changements pour mettre à jour le formulaire
     this.cdr.detectChanges();
   }
+ 
 }

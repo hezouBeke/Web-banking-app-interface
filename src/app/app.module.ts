@@ -11,8 +11,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { AccountManageComponent } from './account-manage/account-manage.component';
+import { TransactionsSidenavComponent } from './transactions-sidenav/transactions-sidenav.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 
@@ -25,6 +26,9 @@ import { AccountManageComponent } from './account-manage/account-manage.componen
     RegisterComponent,
     DashboardComponent,
     AccountManageComponent,
+    TransactionsSidenavComponent,
+    
+  
    
     
   ],
@@ -34,7 +38,8 @@ import { AccountManageComponent } from './account-manage/account-manage.componen
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
 
   ],
   providers: [],
